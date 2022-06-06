@@ -1,4 +1,4 @@
-package com.example.laultimayfuga;
+package com.example.laultimayfuga.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,9 +8,9 @@ import androidx.annotation.Nullable;
 
 public class SQLilte_login extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String DATABASE_NOMBRE = "login.db";
-    private static final String TABLE_USUARIOS = "t_usuarios";
+    public static final String TABLE_USUARIOS = "t_usuarios";
 
     public SQLilte_login(@Nullable Context context) {
         super(context, DATABASE_NOMBRE, null, DATABASE_VERSION);
@@ -21,7 +21,7 @@ public class SQLilte_login extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_USUARIOS + "(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "usuario TEXT NOT NULL," +
-                "contraseña TEXT NOT NULL)");
+                "edad TEXT NOT NULL)");
     }
 
     @Override
